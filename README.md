@@ -1,5 +1,29 @@
-# Vue 3 + Vite
+# IM53 TP1
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This project uses Vue 3 with Vite.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Requirements
+
+- Node.js
+- npm
+
+## Install
+
+```bash
+npm install
+```
+
+## Run in Development
+
+```bash
+npm run dev
+```
+
+Vite will print the local development URL in the terminal, usually `http://localhost:5173/`.
+
+## Other Useful Commands
+
+```bash
+npm run build
+npm run preview
+```
