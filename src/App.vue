@@ -13,6 +13,7 @@
     { hash: '#byte', label: 'Byte', component: Byte },
   ];
   const { currentComponent, currentRoute } = useHashRoute(routes);
+
 </script>
 
 <template>
