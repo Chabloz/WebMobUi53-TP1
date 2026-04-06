@@ -4,25 +4,12 @@
 </script>
 
 <template>
-  <div>
-    <label>{{ label }}</label>
+  <label>
+    <span>{{ label }}</span>
     <input v-model.number="model" type="number">
-  </div>
+  </label>
 </template>
 
 <style scoped>
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-  }
-
-  label {
-    width: var(--label-width, auto);
-    font-weight: bold;
-  }
-
-  input {
-    width: min(100%, var(--input-width, 10rem));
-  }
+  @import './base-input.css';
 </style>
