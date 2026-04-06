@@ -4,6 +4,7 @@
   import Home from './pages/Home.vue';
   import Temperature from './pages/Temperature.vue';
   import Byte from './pages/Byte.vue';
+  import Timestamp from './pages/Timestamp.vue';
 
   import { useHashRoute } from './composables/useHashRoute';
 
@@ -11,6 +12,7 @@
     { hash: '#home', label: 'Home', component: Home },
     { hash: '#temperature', label: 'Temper.', component: Temperature },
     { hash: '#byte', label: 'Byte', component: Byte },
+    { hash: '#timestamp', label: 'Timestamp', component: Timestamp },
   ];
   const { currentComponent, currentRoute } = useHashRoute(routes);
 
@@ -44,14 +46,17 @@
   }
   main {
     padding: 1rem;
-    div {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin: auto;
-      --label-width: 10rem;
-      --input-width: 10rem;
-    }
+  }
+
+  main > * {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: max-content;
+    max-width: 100%;
+    margin: auto;
+    --label-width: 12rem;
+    --input-width: 12rem;
   }
   a {
     color: var(--color-primary);

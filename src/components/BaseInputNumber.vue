@@ -11,12 +11,18 @@
 </template>
 
 <style scoped>
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
   label {
     width: var(--label-width, auto);
     font-weight: bold;
   }
 
   input {
-    width: var(--input-width, 10rem);
+    width: min(100%, var(--input-width, 10rem));
   }
 </style>
