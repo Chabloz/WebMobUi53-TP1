@@ -20,20 +20,18 @@
   <TheHeader>Converter App</TheHeader>
   <TheNav :routes="routes" :currentRoute="currentRoute" />
   <main>
-    <component :is="currentComponent" />
+    <KeepAlive>
+      <component :is="currentComponent" />
+    </KeepAlive>
   </main>
 </template>
 
 <style>
 :root {
     --color-primary: #5d25c6;
-    --color-secondary: #d8a5f8;
-    --color-success: #198754;
-    --color-danger: #dc3545;
-    --color-warning: #ffc107;
-    --color-info: #0dcaf0;
     --color-bg: #fff;
-    --color-border: #e1c5f4;
+    --color-secondary: oklch(from var(--color-primary) calc(l + 0.28) c h);
+    --color-border: oklch(from var(--color-primary) calc(l + 0.34) c h);
   }
   * {
     box-sizing: border-box;
