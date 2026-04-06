@@ -1,0 +1,16 @@
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: bold;
+  max-width: 100%;
+}
+
+span {
+  display: block;
+  width: var(--label-width, auto);
+}
+
+input {
+  width: min(100%, var(--field-width, var(--input-width, 10rem)));
+}
