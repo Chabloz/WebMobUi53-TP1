@@ -1,5 +1,4 @@
 <script setup>
-  import { watch } from 'vue';
   import TheHeader from './components/TheHeader.vue';
   import TheNav from './components/TheNav.vue';
   import { routes } from './stores/routes';
@@ -24,7 +23,8 @@
 <style>
   :root {
     --color-primary: #5d25c6;
-    --color-bg: #fff;
+    --color-bg: oklch(from var(--color-primary) 98% 0.01 h);
+    --color-text: oklch(from var(--color-primary) 20% 0.02 h);
     --color-secondary: oklch(from var(--color-primary) calc(l + 0.28) c h);
     --color-border: oklch(from var(--color-primary) calc(l + 0.34) c h);
   }
@@ -35,15 +35,16 @@
     margin: 0;
     padding: 0;
     background-color: var(--color-bg);
+    color: var(--color-text);
     font-family: monospace, sans-serif;
   }
   body[data-theme="dark"] {
-    --color-bg: #111827;
-    color: #f8fafc;
+    --color-bg: oklch(from var(--color-primary) 15% 0.02 h);
+    --color-text: oklch(from var(--color-primary) 95% 0.01 h);
   }
   body[data-theme="light"] {
-    --color-bg: #fff;
-    color: #111827;
+    --color-bg: oklch(from var(--color-primary) 98% 0.01 h);
+    --color-text: oklch(from var(--color-primary) 20% 0.02 h);
   }
   main {
     padding: 1rem;
