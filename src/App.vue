@@ -4,6 +4,7 @@
   import TheNav from './components/TheNav.vue';
   import { routes } from './stores/routes';
   import { useHashRoute } from './composables/useHashRoute';
+  import '@/stores/color.js';
 
   const { currentComponent, currentRoute } = useHashRoute(routes);
 </script>
@@ -37,17 +38,11 @@
     font-family: monospace, sans-serif;
   }
   body[data-theme="dark"] {
-    --color-primary: #8b5cf6;
     --color-bg: #111827;
-    --color-secondary: oklch(from var(--color-primary) calc(l + 0.28) c h);
-    --color-border: oklch(from var(--color-primary) calc(l + 0.34) c h);
     color: #f8fafc;
   }
   body[data-theme="light"] {
-    --color-primary: #5d25c6;
     --color-bg: #fff;
-    --color-secondary: oklch(from var(--color-primary) calc(l + 0.28) c h);
-    --color-border: oklch(from var(--color-primary) calc(l + 0.34) c h);
     color: #111827;
   }
   main {

@@ -1,14 +1,18 @@
 <script setup>
   import { theme, toggleTheme } from '@/stores/theme.js';
   import BaseButton from './BaseButton.vue';
+  import ColorPicker from './ColorPicker.vue';
 </script>
 
 <template>
   <header>
     <h1><slot></slot></h1>
-    <BaseButton @click="toggleTheme" type="secondary">
-      {{ theme }}
-    </BaseButton>
+    <div class="controls">
+      <ColorPicker />
+      <BaseButton @click="toggleTheme" type="secondary">
+        {{ theme }}
+      </BaseButton>
+    </div>
   </header>
 </template>
 
@@ -25,5 +29,10 @@
     color: var(--color-bg);
     margin: 0;
     padding: 0;
+  }
+  .controls {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
   }
 </style>
