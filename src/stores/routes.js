@@ -1,7 +1,7 @@
-import Home from '../pages/Home.vue';
-import Temperature from '../pages/Temperature.vue';
-import Byte from '../pages/Byte.vue';
-import Timestamp from '../pages/Timestamp.vue';
+import Home from '@/pages/Home.vue';
+import Temperature from '@/pages/Temperature.vue';
+import Byte from '@/pages/Byte.vue';
+import Timestamp from '@/pages/Timestamp.vue';
 
 export const routes = [
   { hash: '#home', label: 'Home', component: Home },

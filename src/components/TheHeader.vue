@@ -1,19 +1,13 @@
 <script setup>
-  import { themeStore } from '@/stores/theme.js';
+  import { theme, toggleTheme } from '@/stores/theme.js';
   import BaseButton from './BaseButton.vue';
-
-  const label = themeStore.theme;
-
-  function toggleTheme() {
-    themeStore.toggleTheme();
-  }
 </script>
 
 <template>
   <header>
     <h1><slot></slot></h1>
     <BaseButton @click="toggleTheme" type="secondary">
-      {{ label }}
+      {{ theme }}
     </BaseButton>
   </header>
 </template>
