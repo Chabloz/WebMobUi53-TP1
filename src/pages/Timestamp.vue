@@ -5,12 +5,12 @@
 
   const rawTimestampMs = ref(Date.now());
 
-  const timestampSeconds = computed({
+  const timestampSeconds = defineModel('s', {
     get: () => Number((rawTimestampMs.value / 1000).toFixed(3)),
     set: (value) => rawTimestampMs.value = Number(value) * 1000,
   });
 
-  const timestampMilliseconds = computed({
+  const timestampMilliseconds = defineModel('ms', {
     get: () => Math.round(rawTimestampMs.value),
     set: (value) => rawTimestampMs.value = Number(value),
   });
@@ -20,7 +20,7 @@
     return Number.isNaN(date.getTime()) ? null : date;
   });
 
-  const localDateTimeInput = computed({
+  const localDateTimeInput = defineModel('date_local',{
     get: () => {
       if (!currentDate.value) return '';
       const time = currentDate.value.getTime();
@@ -35,7 +35,7 @@
     },
   });
 
-  const utcDateTimeInput = computed({
+  const utcDateTimeInput = defineModel('date_utc', {
     get: () => currentDate.value?.toISOString().slice(0, 19) ?? '',
     set: (value) => {
       if (value === '') return;

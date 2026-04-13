@@ -1,11 +1,11 @@
 <script setup>
+  import { themeStore } from '@/stores/theme.js';
   import BaseButton from './BaseButton.vue';
-  import { useJsonStorage } from '../composables/useJsonStorage';
 
-  const { data : label } = useJsonStorage('theme', 'dark');
+  const label = themeStore.theme;
 
   function toggleTheme() {
-    label.value = label.value === 'dark' ? 'light' : 'dark';
+    themeStore.toggleTheme();
   }
 </script>
 

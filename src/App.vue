@@ -1,10 +1,12 @@
 <script setup>
+  import { watch } from 'vue';
   import TheHeader from './components/TheHeader.vue';
   import TheNav from './components/TheNav.vue';
   import Home from './pages/Home.vue';
   import Temperature from './pages/Temperature.vue';
   import Byte from './pages/Byte.vue';
   import Timestamp from './pages/Timestamp.vue';
+  import { themeStore } from './stores/theme.js';
 
   import { useHashRoute } from './composables/useHashRoute';
 
@@ -15,6 +17,14 @@
     { hash: '#timestamp', label: 'Time', component: Timestamp },
   ];
   const { currentComponent, currentRoute } = useHashRoute(routes);
+
+  watch(
+    () => themeStore.theme.value,
+    (value) => {
+      document.body.dataset.theme = value;
+    },
+    { immediate: true }
+  );
 </script>
 
 <template>
@@ -44,6 +54,20 @@
     padding: 0;
     background-color: var(--color-bg);
     font-family: monospace, sans-serif;
+  }
+  body[data-theme="dark"] {
+    --color-primary: #8b5cf6;
+    --color-bg: #111827;
+    --color-secondary: oklch(from var(--color-primary) calc(l + 0.28) c h);
+    --color-border: oklch(from var(--color-primary) calc(l + 0.34) c h);
+    color: #f8fafc;
+  }
+  body[data-theme="light"] {
+    --color-primary: #5d25c6;
+    --color-bg: #fff;
+    --color-secondary: oklch(from var(--color-primary) calc(l + 0.28) c h);
+    --color-border: oklch(from var(--color-primary) calc(l + 0.34) c h);
+    color: #111827;
   }
   main {
     padding: 1rem;
