@@ -2,20 +2,9 @@
   import { watch } from 'vue';
   import TheHeader from './components/TheHeader.vue';
   import TheNav from './components/TheNav.vue';
-  import Home from './pages/Home.vue';
-  import Temperature from './pages/Temperature.vue';
-  import Byte from './pages/Byte.vue';
-  import Timestamp from './pages/Timestamp.vue';
-  import { themeStore } from './stores/theme.js';
-
+  import { routes } from './stores/routes';
   import { useHashRoute } from './composables/useHashRoute';
 
-  const routes = [
-    { hash: '#home', label: 'Home', component: Home },
-    { hash: '#temperature', label: 'Temp.', component: Temperature },
-    { hash: '#byte', label: 'Byte', component: Byte },
-    { hash: '#timestamp', label: 'Time', component: Timestamp },
-  ];
   const { currentComponent, currentRoute } = useHashRoute(routes);
 </script>
 
