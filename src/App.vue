@@ -17,12 +17,6 @@
     { hash: '#timestamp', label: 'Time', component: Timestamp },
   ];
   const { currentComponent, currentRoute } = useHashRoute(routes);
-
-  watch(
-    () => themeStore.theme.value,
-    (value) => document.body.dataset.theme = value,
-    { immediate: true }
-  );
 </script>
 
 <template>

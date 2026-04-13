@@ -7,6 +7,11 @@ watch(theme, (value) => {
   setItem('theme', value);
 }, { immediate: true });
 
+watch(theme,
+  (value) => document.body.dataset.theme = value,
+  { immediate: true }
+);
+
 function toggleTheme() {
   theme.value = theme.value === 'dark' ? 'light' : 'dark';
 }
