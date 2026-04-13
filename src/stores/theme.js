@@ -1,15 +1,15 @@
-import { watch } from 'vue';
+import { readonly, watch } from 'vue';
 import { useJsonStorage } from '@/composables/useJsonStorage.js';
 
-const { data: theme } = useJsonStorage('theme', 'dark');
+const { data } = useJsonStorage('theme', 'dark');
 
-watch(theme,
+watch(data,
   (value) => document.body.dataset.theme = value,
   { immediate: true }
 );
 
-function toggleTheme() {
-  theme.value = theme.value === 'dark' ? 'light' : 'dark';
+export function toggleTheme() {
+  data.value = data.value === 'dark' ? 'light' : 'dark';
 }
 
-export { theme, toggleTheme };
+export const theme = readonly(data);
