@@ -21,6 +21,7 @@
 </template>
 
 <style>
+  /* Couleur par défaut définie dans .env : VITE_PRIMARY_COLOR */
   :root {
     --color-primary: #5d25c6;
     --color-bg: oklch(from var(--color-primary) 98% 0.01 h);

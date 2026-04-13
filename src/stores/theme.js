@@ -1,7 +1,7 @@
 import { readonly, watch } from 'vue';
 import { useJsonStorage } from '@/composables/useJsonStorage.js';
 
-const { data } = useJsonStorage('theme', 'dark');
+const { data } = useJsonStorage('theme', 'light');
 
 watch(data,
   (value) => document.body.dataset.theme = value,
