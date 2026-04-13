@@ -20,9 +20,7 @@
 
   watch(
     () => themeStore.theme.value,
-    (value) => {
-      document.body.dataset.theme = value;
-    },
+    (value) => document.body.dataset.theme = value,
     { immediate: true }
   );
 </script>
